@@ -5,7 +5,8 @@ const data = [
     { nama: 'Rifqi', alamat: 'Jakarta' },
     { nama: 'Gema', alamat: 'Bandung' },
     { nama: 'Yudi', alamat: 'Medan' },
-    { nama: 'Fahmi', alamat: 'Bandung' }
+    { nama: 'Fahmi', alamat: 'Bandung' },
+    { nama: 'Gilang', alamat: 'Medan' }
 ]
 
 const app = express()
@@ -35,13 +36,13 @@ app.post('/tambah', (req, res) => {
     res.redirect('/')
 })
 
-app.get('/hapus/: id', (req, res) => {
+app.get('/hapus/:id', (req, res) => {
     const id = req.params.id
     data.splice(id, 1)
     res.redirect('/')
 })
 
-app.get('/ubah/: id', (req, res) => {
+app.get('/ubah/:id', (req, res) => {
     const id = req.params.id
     res.render('edit', { item: data[id] })
 })
