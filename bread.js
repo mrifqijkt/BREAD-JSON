@@ -47,6 +47,12 @@ app.get('/ubah/:id', (req, res) => {
     res.render('edit', { item: data[id] })
 })
 
+app.post('/ubah/:id', ( req, res )=> {
+    const id = req.params.id
+    data.push({ nama: req.body.nama, alamat: req.body.alamat })
+    res.redirect('/')
+})
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
