@@ -2,11 +2,10 @@ const express = require('express')
 const bodyParser = require('body-parser')
 
 const data = [
-    { nama: 'Rifqi', alamat: 'Jakarta' },
-    { nama: 'Gema', alamat: 'Bandung' },
-    { nama: 'Yudi', alamat: 'Medan' },
-    { nama: 'Fahmi', alamat: 'Bandung' },
-    { nama: 'Gilang', alamat: 'Medan' }
+    { String: 'Testing Data', Integer: '12', Float: '1.45', Date: '12 Desember 2017', Boolean: 'true' },
+    { String: 'Coba Lagi', Integer: '99', Float: '100.405', Date: '20 November 2017', Boolean: 'false' },
+    { String: 'Super Sekali', Integer: '0', Float: '1.45', Date: 'kosong', Boolean: 'false' }
+
 ]
 
 const app = express()
@@ -27,11 +26,11 @@ app.get('/', (req, res) => {
     res.render('index', { data })
 })
 
-app.get('/tambah', (req, res) => {
+app.get('/Add', (req, res) => {
     res.render('add')
 })
 
-app.post('/tambah', (req, res) => {
+app.post('/Add', (req, res) => {
     data.push({ nama: req.body.nama, alamat: req.body.alamat })
     res.redirect('/')
 })
@@ -47,7 +46,7 @@ app.get('/ubah/:id', (req, res) => {
     res.render('edit', { item: data[id] })
 })
 
-app.post('/ubah/:id', ( req, res )=> {
+app.post('/ubah/:id', (req, res) => {
     const id = req.params.id
     data.push({ nama: req.body.nama, alamat: req.body.alamat })
     res.redirect('/')
