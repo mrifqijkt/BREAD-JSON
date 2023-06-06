@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const fs = require('node:fs');
 
 const data = [
     { String: 'Testing Data', Integer: '12', Float: '1.45', Date: '12 Desember 2017', Boolean: 'true' },
@@ -9,6 +10,9 @@ const data = [
 ]
 
 const app = express()
+
+let rawdata = fs.readFileSync('data.json');
+let bread = JSON.parse(rawdata)
 
 const port = 3000
 
@@ -23,7 +27,7 @@ app.use(bodyParser.json())
 
 
 app.get('/', (req, res) => {
-    res.render('index', { data })
+    res.render('index', { bread })
 })
 
 app.get('/Add', (req, res) => {
@@ -31,24 +35,26 @@ app.get('/Add', (req, res) => {
 })
 
 app.post('/Add', (req, res) => {
-    data.push({ nama: req.body.nama, alamat: req.body.alamat })
+    console.log(req.body.String)
+    bread.push({ "String": req.body.String, "Integer": req.body.Integer, "Float": req.body.Float, "Date": req.body.Date, "Boolean": req.body.Boolean })
+    fs.writeFileSync('data.json', JSON.stringify(bread, null, 4))
     res.redirect('/')
 })
 
 app.get('/hapus/:id', (req, res) => {
     const id = req.params.id
-    data.splice(id, 1)
+    bread.splice(id, 1)
     res.redirect('/')
 })
 
 app.get('/ubah/:id', (req, res) => {
     const id = req.params.id
-    res.render('edit', { item: data[id] })
+    res.render('edit', { item: bread[id] })
 })
 
 app.post('/ubah/:id', (req, res) => {
     const id = req.params.id
-    data.push({ nama: req.body.nama, alamat: req.body.alamat })
+    bread.push({ "idd": req.body.idd, "String": req.body.String, "Integer": req.body.Integer, "Float": req.body.Float, "Date": req.body.Date, "Boolean": req.body.Boolean })
     res.redirect('/')
 })
 
