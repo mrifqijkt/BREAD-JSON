@@ -6,93 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ubah Data</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        input[type=text],
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            resize: vertical;
-        }
-
-        label {
-            padding: 12px 12px 12px 0;
-            display: inline-block;
-        }
-
-        input[type=submit] {
-            background-color: blue;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-
-        }
-
-        .add {
-            background-color: blue;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type=submit]:hover {
-            background-color: #45a049;
-        }
-
-        .container {
-            border-radius: 5px;
-            background-color: white;
-            padding: 20px;
-        }
-
-        .col-25 {
-            float: left;
-            width: 25%;
-            margin-top: 6px;
-        }
-
-        .col-75 {
-            float: left;
-            width: 75%;
-            margin-top: 6px;
-        }
-
-        .row::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        @media screen and (max-width: 600px) {
-
-            .col-25,
-            .col-75,
-            input[type=submit] {
-                width: 100%;
-                margin-top: 0;
-            }
-        }
-
-        .update {
-            background-color: blue;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-    </style>
-
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -100,10 +14,10 @@
         <h1>Edit Data</h1>
         <div class="row">
             <div class="col-25">
-                <label for="idd">ID</label>
+                <label for="id">ID</label>
             </div>
             <div class="col-75">
-                <input type="text" value="<%= item.idd %>" id="idd" name="idd">
+                <input type="text" value="<%= item.id %>" id="id" name="ID" readonly style="background-color: #ccc;">
             </div>
         </div>
         <div class="row">
@@ -111,7 +25,7 @@
                 <label for="string">String</label>
             </div>
             <div class="col-75">
-                <input type="text" value="<%= item.string %>" id="string" name="String">
+                <input type="text" value="<%= item.String %>" id="string" name="String">
             </div>
         </div>
         <div class="row">
@@ -119,7 +33,7 @@
                 <label for="integer">Integer</label>
             </div>
             <div class="col-75">
-                <input type="text" value="<%= item.integer %>" id="integer" name="Integer">
+                <input type="text" value="<%= item.Integer %>" id="integer" name="Integer">
             </div>
         </div>
         <div class="row">
@@ -127,7 +41,7 @@
                 <label for="float">Float</label>
             </div>
             <div class="col-75">
-                <input type="text" value="<%= item.float %>" id="float" name="Float">
+                <input type="text" value="<%= item.Float %>" id="float" name="Float">
             </div>
         </div>
         <div class="row">
@@ -135,7 +49,7 @@
                 <label for="date">Date</label>
             </div>
             <div class="col-75">
-                <input style="width: 20%;" type="text" value="<%= item.date %>" id="date" name="Date">
+                <input type="date" value="<%= item.Date %>" id="date" name="Date">
             </div>
         </div>
         <div class="row">
@@ -143,15 +57,12 @@
                 <label for="boolean">Boolean</label>
             </div>
             <div class="col-75">
-                <select style="background-color: white;" id="boolean" name="Boolean">
-                    <option value="">Choose the boolean...</option>
-                    <option value="true">True</option>
-                    <option value="false">False</option>
-                </select>
+                <input style="background-color: white;" type="text" value="<%= item.Boolean %>" id="boolean"
+                    name="Boolean">
             </div>
         </div>
         <br>
-        <button type="submit" class="update">Update</button>
+        <button type="submit" class="add">Update</button>
     </form>
 </body>
 

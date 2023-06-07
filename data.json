@@ -1,37 +1,26 @@
 [
     {
+        "id": 1,
         "String": "Testing Data",
         "Integer": "12",
         "Float": "1.45",
-        "Date": "12 Desember 2017",
+        "Date": "2017-12-12",
         "Boolean": "true"
     },
     {
+        "id": 2,
         "String": "Coba Lagi",
         "Integer": "99",
         "Float": "100.405",
-        "Date": "20 November 2017",
+        "Date": "2017-11-20",
         "Boolean": "false"
     },
     {
+        "id": 3,
         "String": "Super Sekali",
         "Integer": "0",
         "Float": "1.45",
-        "Date": "kosong",
-        "Boolean": "false"
-    },
-    {
-        "String": "AKu belanja",
-        "Integer": "12",
-        "Float": "212.212",
-        "Date": "12 Mei 2023",
-        "Boolean": "true"
-    },
-    {
-        "String": "aku belajar",
-        "Integer": "21",
-        "Float": "131.13",
-        "Date": "15 November 2003",
+        "Date": "Kosong",
         "Boolean": "false"
     }
 ]
