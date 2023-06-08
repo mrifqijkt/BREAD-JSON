@@ -22,5 +22,21 @@
         "Float": "1.45",
         "Date": "Kosong",
         "Boolean": "false"
+    },
+    {
+        "id": 4,
+        "String": "Rifqi",
+        "Integer": "15",
+        "Float": "1.5",
+        "Date": "2023-06-05",
+        "Boolean": "false"
+    },
+    {
+        "id": 5,
+        "String": "YudiJJ",
+        "Integer": "145",
+        "Float": "14.12",
+        "Date": "2023-06-01",
+        "Boolean": "false"
     }
 ]
