@@ -17,7 +17,7 @@
     },
     {
         "id": 3,
-        "String": "Super Sekali",
+        "String": "Super SekaliII",
         "Integer": "0",
         "Float": "1.45",
         "Date": "Kosong",
@@ -38,5 +38,13 @@
         "Float": "14.12",
         "Date": "2023-06-01",
         "Boolean": "false"
+    },
+    {
+        "id": 6,
+        "String": "gggwyqywiqy",
+        "Integer": "21",
+        "Float": "212.212",
+        "Date": "Kosong",
+        "Boolean": "true"
     }
 ]

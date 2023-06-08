@@ -46,7 +46,7 @@ app.get('/ubah/:id', (req, res) => {
 
 app.post('/ubah/:id', (req, res) => {
     const id = req.params.id
-    bread[id] = ({ "id": parseInt(id) + 1, "String": req.body.String, "Integer": req.body.Integer, "Float": req.body.Float, "Date": req.body.Date, "Boolean": req.body.Boolean })
+    bread[id] = ({ "id": parseInt(id) + 1, "String": req.body.String, "Integer": req.body.Integer, "Float": req.body.Float, "Date": req.body.Date || "Kosong", "Boolean": req.body.Boolean })
     fs.writeFileSync('data.json', JSON.stringify(bread, null, 4))
     res.redirect('/')
 })
